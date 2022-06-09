@@ -1,0 +1,30 @@
+def peliculas_sin_repeticion (E1):
+  lista = []
+  for pelicula in E1:
+    if int(pelicula) not in lista:
+      lista.append(int(pelicula))
+  return lista
+
+def pelicula_en_posiciones (E1,E2,E3):
+  lista = []
+  for pos in E1:
+    if E2[pos] == E3:
+      lista.append(pos)
+  return lista
+
+def solo_drama (E1,E2):
+  lista = []
+  for pelicula in E1:
+    if pelicula not in E2:
+      lista.append(pelicula)
+  return lista
+
+def numero_cambios (E1,E2):
+  lista = [0,0]
+  for pelicula in E1:
+    if pelicula not in E2:
+      lista[0]+=1
+  for pelicula in E2:
+    if pelicula not in E1:
+      lista[1]+=1
+  return min(lista)
